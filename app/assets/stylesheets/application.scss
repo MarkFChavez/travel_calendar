@@ -1,11 +1,15 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and
-// "bootstrap/variables"
 @import "bootstrap-sprockets";
+@import "bootstrap/variables";
 @import "bootstrap";
 
 .simple-calendar {
   .prev-month, .next-month {
     color: #aaa;
+  }
+
+  .wday-6, .wday-0 {
+    background-color: $gray-lighter;
   }
 
   .today {
