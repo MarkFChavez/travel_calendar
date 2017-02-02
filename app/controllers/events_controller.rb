@@ -11,14 +11,10 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(event_params)
-    @event.color = "%06x" % (rand * 0xffffff)
-    
-    if @event.save
-      redirect_to root_url(start_date: @event.calendar_friendly_start_time)
-    else
-      render "new"
-    end
+    @event = CreateEvent.new(event_params)
+    @event = @event.call
+
+    redirect_to root_url(start_date: @event.calendar_friendly_start_time)
   end
 
   def update
