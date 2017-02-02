@@ -1,8 +1,4 @@
-= month_calendar events: @events do |date, events|
-  .row
-    .col-lg-12
-      %strong #{date.day}
-
-  .row
-    .col-lg-12
-      #{pluralize(events.count, "event")}
+.row
+  .col-lg-12
+    = month_calendar events: @events do |date, events|
+      #{date.day}
