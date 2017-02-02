@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    render "index"
+    @events = Event.all
   end
 end

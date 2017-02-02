@@ -1,5 +1,8 @@
--# = month_calendar events: meetings do |date, meetings|
--#   %div 
--#     %strong #{date.day}
--#   %div #{pluralize(meetings.count, "meeting")}
-hello world
+= month_calendar events: @events do |date, events|
+  .row
+    .col-lg-12
+      %strong #{date.day}
+
+  .row
+    .col-lg-12
+      #{pluralize(events.count, "event")}

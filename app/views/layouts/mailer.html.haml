@@ -1,0 +1,13 @@
+\!!!
+\%html
+\%head
+\%meta{:content =&gt; "text/html; charset=UTF-8", "http-equiv" =&gt; "Content-Type"}/
+\%title TravelCalendar
+\= csrf_meta_tags
+\= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+\= javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+\%body
+\.container
+\.row
+\.col-lg-12
+\= yield
