@@ -1,7 +1,13 @@
 class EventsController < ApplicationController
   def new
     @event = Event.new
-    @default_start_date = start_date
+    @event.start_time = start_date
+  end
+
+  def edit
+    @event = Event.find(params[:id])
+    @event.start_time = @event.start_time.strftime("%d/%m/%Y")
+    @event.end_time = @event.end_time.strftime("%d/%m/%Y")
   end
 
   def create
@@ -12,6 +18,16 @@ class EventsController < ApplicationController
       redirect_to root_url
     else
       render "new"
+    end
+  end
+
+  def update
+    @event = Event.find(params[:id])
+
+    if @event.update_attributes(event_params)
+      redirect_to root_url
+    else
+      render "edit"
     end
   end
 

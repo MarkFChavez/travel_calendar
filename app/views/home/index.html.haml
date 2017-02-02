@@ -15,4 +15,4 @@
           - if events.any?
             - events.each do |event|
               .event.truncate{ style: "background-color: ##{event.color}" }
-                = link_to event.name, "#", class: "link"
+                = link_to event.name, edit_event_path(event), class: "link"
