@@ -1,5 +1,7 @@
 class CreateEvent
 
+  class NotValidEventException < StandardError; end
+
   def initialize(attributes = {})
     @attributes = attributes
   end
@@ -7,12 +9,12 @@ class CreateEvent
   def call
     event = Event.new(@attributes)
     event.color = generate_hex_color
-
-    if event_form.valid?
-      event.save
+    
+    if event_form.valid? && event.save
+      return event
+    else
+      raise NotValidEventException, event_form.errors.full_messages.to_sentence
     end
-
-    return event
   end
 
   private

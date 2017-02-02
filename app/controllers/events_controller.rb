@@ -15,6 +15,9 @@ class EventsController < ApplicationController
     @event = @event.call
 
     redirect_to root_url(start_date: @event.calendar_friendly_start_time)
+
+  rescue CreateEvent::NotValidEventException => e
+    redirect_to root_url
   end
 
   def update
