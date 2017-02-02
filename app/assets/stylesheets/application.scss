@@ -2,6 +2,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap/variables";
 @import "bootstrap";
+@import 'bootstrap-datetimepicker';
 
 .simple-calendar {
   .prev-month, .next-month {
@@ -30,7 +31,10 @@
   }
 
   .has-events {
-    background-color: $brand-primary;
-    color: $gray-lighter;
+  }
+
+  .link {
+    color: inherit;
+    text-decoration: none;
   }
 }

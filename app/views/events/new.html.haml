@@ -1,0 +1,29 @@
+.row
+  .col-lg-6.col-lg-offset-3
+    = form_for @event do |f|
+      %p.lead.text-center Create an Event
+
+      .row.form-group
+        .col-lg-12
+          = f.label :name
+          = f.text_field :name, class: "form-control", placeholder: "What is the name of your event?"
+
+      .row.form-group
+        .col-lg-12
+          = f.label :description
+          = f.text_area :description, class: "form-control", placeholder: "Describe your event"
+
+      .row.form-group
+        .col-lg-12
+          = f.label :start_time
+          = f.text_field :start_time, class: "form-control start-time", placeholder: "When will the event start?", value: @default_start_date
+
+      .row.form-group
+        .col-lg-12
+          = f.label :end_time
+          = f.text_field :end_time, class: "form-control end-time", placeholder: "When will the event end?"
+
+      .row.form-group.text-center
+        .col-lg-12
+          = f.submit "Create", class: "btn btn-primary btn-lg"
+          = link_to "Cancel", root_path, class: "btn btn-default btn-lg"

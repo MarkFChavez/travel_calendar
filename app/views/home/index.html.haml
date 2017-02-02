@@ -3,12 +3,17 @@
     = month_calendar events: @events do |date, events|
       .row
         .col-lg-12
-          .pull-right
-            %p.lead #{date.day}
 
-          .clearfix
+          .row
+            .col-lg-12
+              .pull-right
+                %p.lead 
+                  = link_to date.day, new_event_path(start_date: date.to_s), class: "link"
 
-      - if events.any?
-        - events.each do |event|
-          %div
-            %span.truncate #{event.name}
+              .clearfix
+
+          - if events.any?
+            - events.each do |event|
+              .event
+                %span.truncate 
+                  = link_to event.name, "#"
