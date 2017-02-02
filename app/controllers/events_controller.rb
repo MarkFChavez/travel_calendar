@@ -6,6 +6,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+    @event.color = "%06x" % (rand * 0xffffff)
     
     if @event.save
       redirect_to root_url

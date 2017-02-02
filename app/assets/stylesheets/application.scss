@@ -31,6 +31,10 @@
   }
 
   .has-events {
+    .event {
+      color: $gray-lighter;
+      padding: $padding-small-vertical;
+    }
   }
 
   .link {

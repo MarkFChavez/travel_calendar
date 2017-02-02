@@ -7,13 +7,12 @@
           .row
             .col-lg-12
               .pull-right
-                %p.lead 
+                %p.lead
                   = link_to date.day, new_event_path(start_date: date.to_s), class: "link"
 
               .clearfix
 
           - if events.any?
             - events.each do |event|
-              .event
-                %span.truncate 
-                  = link_to event.name, "#"
+              .event.truncate{ style: "background-color: ##{event.color}" }
+                = link_to event.name, "#", class: "link"
