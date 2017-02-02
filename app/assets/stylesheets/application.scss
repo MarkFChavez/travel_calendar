@@ -2,3 +2,15 @@
 // "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.simple-calendar {
+  .prev-month, .next-month {
+    color: #aaa;
+  }
+
+  .today {
+    .calendar-day {
+      font-weight: bold !important;
+    }
+  }
+}
