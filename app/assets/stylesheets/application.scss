@@ -8,6 +8,17 @@
     color: #aaa;
   }
 
+  .day {
+    max-width: 50px;
+    p.truncate {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: inline-block;
+      max-width: 100%;
+    }
+  }
+
   .wday-6, .wday-0 {
     background-color: $gray-lighter;
   }
