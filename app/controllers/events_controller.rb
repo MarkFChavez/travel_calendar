@@ -15,7 +15,7 @@ class EventsController < ApplicationController
     @event.color = "%06x" % (rand * 0xffffff)
     
     if @event.save
-      redirect_to root_url
+      redirect_to root_url(start_date: @event.calendar_friendly_start_time)
     else
       render "new"
     end
@@ -25,10 +25,17 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
 
     if @event.update_attributes(event_params)
-      redirect_to root_url
+      redirect_to root_url(start_date: @event.calendar_friendly_start_time)
     else
       render "edit"
     end
+  end
+
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+
+    redirect_to root_url(start_date: @event.calendar_friendly_start_time)
   end
 
   private

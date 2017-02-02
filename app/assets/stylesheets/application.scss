@@ -25,9 +25,7 @@
   }
 
   .today {
-    p {
-      font-weight: bold !important;
-    }
+    background-color: $brand-success;
   }
 
   .has-events {
