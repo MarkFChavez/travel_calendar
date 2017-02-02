@@ -10,7 +10,7 @@
 
   .day {
     max-width: 50px;
-    p.truncate {
+    .truncate {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -24,8 +24,13 @@
   }
 
   .today {
-    .calendar-day {
+    p {
       font-weight: bold !important;
     }
+  }
+
+  .has-events {
+    background-color: $brand-primary;
+    color: $gray-lighter;
   }
 }

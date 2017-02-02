@@ -10,8 +10,7 @@
 
       - if events.any?
         - events.each do |event|
-          .row
-            .col-lg-12
-              %p.lead.truncate #{event.name}
+          %div
+            %span.truncate #{event.name}
             
 
