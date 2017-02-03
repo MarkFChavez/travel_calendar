@@ -6,6 +6,7 @@
 
     .pull-right
       = link_to t('simple_calendar.previous', default: 'previous'), calendar.url_for_previous_view
+      = link_to "today", root_path(start_date: date_today)
       = link_to t('simple_calendar.next', default: 'next'), calendar.url_for_next_view
 
     .clearfix

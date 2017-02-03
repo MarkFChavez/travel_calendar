@@ -1,7 +1,7 @@
 class Event < ApplicationRecord
 
   def calendar_friendly_start_time
-    start_time.strftime("%Y-%m-%d")
+    Date.parse(start_time.to_s).to_s
   end
 
   def to_param
