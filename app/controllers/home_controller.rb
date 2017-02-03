@@ -1,12 +1,16 @@
 class HomeController < ApplicationController
   def index
-    @events= Event.where(created_at: start_date.beginning_of_month..start_date.end_of_month)
+    @events= Event.where(start_time: safe_month_range)
   end
 
   private
 
-  def start_date
+  # This is so that all events should show on the calendar event if different
+  # month
+  def safe_month_range
     start_date = params[:start_date] || Date.today.to_s
-    Date.parse(start_date)
+    date = Date.parse(start_date)
+
+    (date.beginning_of_month-5.days)..(date.end_of_month + 5.days)
   end
 end
