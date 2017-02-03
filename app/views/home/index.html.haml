@@ -14,8 +14,6 @@
 
           - if events.any?
             - if events.many? && (event = events.shift)
-
               = render "events/multiple_events", first_event: event, events: events, date: date
-
             - else
               = render "events/calendar_event", event: events.first
