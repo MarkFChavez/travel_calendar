@@ -8,10 +8,8 @@ $(document).on "turbolinks:load", () ->
   $(".start-time").datetimepicker(options)
   $(".end-time").datetimepicker(options)
 
-  # $(".start-time").on "dp.change", (e) ->
-  #   $(".end-time").data("DateTimePicker").minDate(e.date)
-  #
-  # $(".end-time").on "dp.change", (e) ->
-  #   $(".start-time").data("DateTimePicker").maxDate(e.date)
-  #
-  # $(".start-time").trigger("dp.change")
+  $(".start-time").on "dp.change", (e) ->
+    $(".end-time").data("DateTimePicker").minDate(e.date)
+
+  $(".end-time").on "dp.change", (e) ->
+    $(".start-time").data("DateTimePicker").maxDate(e.date)

@@ -1,7 +1,10 @@
 class EventsController < ApplicationController
   def new
     @event = Event.new
+
+    # set initial dates
     @event.start_time = start_date
+    @event.end_time = start_date
   end
 
   def edit
