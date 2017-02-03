@@ -19,5 +19,6 @@ Bundler.require(*Rails.groups)
 module TravelCalendar
   class Application < Rails::Application
     config.time_zone = "Hong Kong"
+    config.beginning_of_week = :sunday
   end
 end
