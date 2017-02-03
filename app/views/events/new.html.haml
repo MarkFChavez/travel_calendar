@@ -8,4 +8,4 @@
       .row.form-group.text-center
         .col-lg-12
           = f.submit "Create", class: "btn btn-primary btn-lg"
-          = link_to "Cancel", root_path, class: "btn btn-default btn-lg"
+          = link_to "Cancel", root_path(start_date: @event.start_time), class: "btn btn-default btn-lg"
