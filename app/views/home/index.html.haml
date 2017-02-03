@@ -14,10 +14,8 @@
 
           - if events.any?
             - if events.many? && (event = events.shift)
-              .row
-                .col-lg-12
-                  .event{ style: "background-color: ##{event.color}" }
-                    = link_to event.name, edit_event_path(event), class: "link truncate"
+
+              = render "events/calendar_event", event: event
 
               .row.top10
                 .col-lg-12
@@ -26,7 +24,4 @@
 
 
             - else
-              .row
-                .col-lg-12
-                  .event{ style: "background-color: ##{events.first.color}" }
-                    = link_to events.first.name, edit_event_path(events.first), class: "link truncate"
+              = render "events/calendar_event", event: events.first

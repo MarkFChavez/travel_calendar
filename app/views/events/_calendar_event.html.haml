@@ -1,0 +1,4 @@
+.row
+  .col-lg-12
+    .event{ style: "background-color: ##{event.color}" }
+      = link_to event.name, edit_event_path(event), class: "link truncate"
