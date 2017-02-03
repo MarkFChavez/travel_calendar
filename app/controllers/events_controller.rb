@@ -8,13 +8,13 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @event = Event.find(params[:id])
+    @event = current_user.events.find(params[:id])
     @event.start_time = @event.start_time.strftime("%d/%m/%Y")
     @event.end_time = @event.end_time.strftime("%d/%m/%Y")
   end
 
   def create
-    @event = CreateEvent.new(event_params)
+    @event = CreateEvent.new(current_user, event_params)
     @event = @event.call
 
     redirect_to root_url(start_date: @event.calendar_friendly_start_time)
@@ -24,7 +24,7 @@ class EventsController < ApplicationController
   end
 
   def update
-    @event = Event.find(params[:id])
+    @event = current_user.events.find(params[:id])
 
     if @event.update_attributes(event_params)
       redirect_to root_url(start_date: @event.calendar_friendly_start_time)
@@ -34,7 +34,7 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    @event = Event.find(params[:id])
+    @event = current_user.events.find(params[:id])
     @event.destroy
 
     redirect_to root_url(start_date: @event.calendar_friendly_start_time)

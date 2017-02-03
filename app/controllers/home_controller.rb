@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @events= Event.where(start_time: safe_month_range)
+    @events= current_user.events.where(start_time: safe_month_range)
   end
 
   private

@@ -1,7 +1,14 @@
 .simple-calendar
+  .row
+    .col-lg-12
+      = fa_icon("user-circle")
+      = current_user.email
+      = link_to "logout", destroy_user_session_path, method: :delete
+
   .calendar-heading
     .pull-left
-      %p.lead #{t('date.month_names')[start_date.month]} #{start_date.year}
+      %p.lead 
+        #{t('date.month_names')[start_date.month]} #{start_date.year}
 
     .pull-right
       = link_to t('simple_calendar.previous', default: 'previous'), calendar.url_for_previous_view

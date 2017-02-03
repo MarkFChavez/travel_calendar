@@ -2,12 +2,13 @@ class CreateEvent
 
   class NotValidEventException < StandardError; end
 
-  def initialize(attributes = {})
+  def initialize(user, attributes = {})
+    @user = user
     @attributes = attributes
   end
 
   def call
-    event = Event.new(@attributes)
+    event = @user.events.build(@attributes)
     
     if event_form.valid? && event.save
       return event

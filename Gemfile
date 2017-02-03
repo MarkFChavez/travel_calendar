@@ -6,10 +6,11 @@ gem "haml-rails"
 gem "bootstrap-sass", "~> 3.3.6"
 gem "pry"
 gem "pry-rails"
-gem 'momentjs-rails', '>= 2.9.0'
-gem 'bootstrap3-datetimepicker-rails', '~> 4.17.43'
+gem "momentjs-rails", ">= 2.9.0"
+gem "bootstrap3-datetimepicker-rails", "~> 4.17.43"
 gem "font-awesome-rails"
-gem 'jquery-minicolors-rails'
+gem "jquery-minicolors-rails"
+gem "devise"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
