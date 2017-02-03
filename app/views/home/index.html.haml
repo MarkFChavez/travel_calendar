@@ -15,12 +15,7 @@
           - if events.any?
             - if events.many? && (event = events.shift)
 
-              = render "events/calendar_event", event: event
-
-              .row
-                .col-lg-12
-                  .other-events
-                    %input{ type: "button", value: "#{events.count} more...", class: "btn btn-link", data: { toggle: "popover", content: "#{popover_events_template(events)}" }, title: "#{date.strftime('%b %d, %Y')}" }
+              = render "events/multiple_events", first_event: event, events: events, date: date
 
             - else
               = render "events/calendar_event", event: events.first

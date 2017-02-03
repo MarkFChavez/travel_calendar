@@ -1,0 +1,7 @@
+
+= render "events/calendar_event", event: first_event
+
+.row
+  .col-lg-12
+    .other-events
+      %input{ type: "button", value: "#{events.count} more...", class: "btn btn-link", data: { toggle: "popover", content: "#{popover_events_template(events)}" }, title: "#{date.strftime('%b %d, %Y')}" }
