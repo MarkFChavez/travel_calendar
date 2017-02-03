@@ -7,7 +7,7 @@
           .row
             .col-lg-12
               .pull-right
-                %p.lead
+                %p
                   = link_to date.day, new_event_path(start_date: date.to_s), class: "link"
 
               .clearfix
@@ -17,11 +17,10 @@
 
               = render "events/calendar_event", event: event
 
-              .row.top10
+              .row
                 .col-lg-12
                   .other-events
-                    = link_to "#{events.count} more...", "#", class: "text-warning"
-
+                    %input{ type: "button", value: "#{events.count} more...", class: "btn btn-link", data: { toggle: "popover", content: "#{popover_events_template(events)}" }, title: "#{date.strftime('%b %d, %Y')}" }
 
             - else
               = render "events/calendar_event", event: events.first

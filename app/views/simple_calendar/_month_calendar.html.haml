@@ -1,8 +1,7 @@
 .simple-calendar
   .calendar-heading
     .pull-left
-      %p.lead
-        #{t('date.month_names')[start_date.month]} #{start_date.year}
+      %p.lead #{t('date.month_names')[start_date.month]} #{start_date.year}
 
     .pull-right
       = link_to t('simple_calendar.previous', default: 'previous'), calendar.url_for_previous_view
@@ -17,7 +16,7 @@
         - date_range.slice(0, 7).each do |day|
           %th
             .pull-right
-              %p.lead= t('date.abbr_day_names')[day.wday]
+              %p= t('date.abbr_day_names')[day.wday]
 
     %tbody
       - date_range.each_slice(7) do |week|

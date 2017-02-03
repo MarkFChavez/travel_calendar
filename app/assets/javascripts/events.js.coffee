@@ -13,3 +13,9 @@ $(document).on "turbolinks:load", () ->
 
   $(".end-time").on "dp.change", (e) ->
     $(".start-time").data("DateTimePicker").maxDate(e.date)
+
+  $("[data-toggle='popover']").popover(
+    html: true
+    container: "body"
+  )
+
