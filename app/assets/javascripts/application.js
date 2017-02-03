@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.minicolors
 //= require bootstrap-sprockets
 //= require moment
 //= require bootstrap-datetimepicker

@@ -8,6 +8,9 @@ $(document).on "turbolinks:load", () ->
   $(".start-time").datetimepicker(options)
   $(".end-time").datetimepicker(options)
 
+  $(".colorpicker").minicolors
+    theme: "bootstrap"
+
   $(".start-time").on "dp.change", (e) ->
     $(".end-time").data("DateTimePicker").minDate(e.date)
 
