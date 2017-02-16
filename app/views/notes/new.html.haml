@@ -1,0 +1,11 @@
+.row
+  .col-lg-6.col-lg-offset-3
+    %p.lead.text-center 
+      Add a note for your event `#{@event.name}`
+
+    = form_for [@event, @note] do |f|
+      = f.text_area :content, class: "form-control", placeholder: "Write a note about this event (supports markdown)", rows: "15"
+
+      .top10
+        = f.submit "Add this note", class: "btn btn-primary btn-lg"
+        = link_to "Cancel", edit_event_path(@event), class: "btn btn-default btn-lg"

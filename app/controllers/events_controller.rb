@@ -8,9 +8,13 @@ class EventsController < ApplicationController
   end
 
   def edit
+    # event
     @event = current_user.events.find(params[:id])
     @event.start_time = @event.start_time.strftime("%d/%m/%Y")
     @event.end_time = @event.end_time.strftime("%d/%m/%Y")
+
+    # notes
+    @notes = @event.notes.order(created_at: :desc)
   end
 
   def create
