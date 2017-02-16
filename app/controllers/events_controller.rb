@@ -14,7 +14,7 @@ class EventsController < ApplicationController
     @event.end_time = @event.end_time.strftime("%d/%m/%Y")
 
     # notes
-    @notes = @event.notes.order(created_at: :desc)
+    @notes = @event.notes.order(updated_at: :desc)
   end
 
   def create

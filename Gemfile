@@ -11,7 +11,7 @@ gem "bootstrap3-datetimepicker-rails", "~> 4.17.43"
 gem "font-awesome-rails"
 gem "jquery-minicolors-rails"
 gem "devise"
-gem "redcarpet"
+gem "ckeditor"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'

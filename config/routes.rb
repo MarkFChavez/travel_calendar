@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root "home#index"
 
   resources :events do
-    resources :notes, only: [:new, :create]
+    resources :notes, only: [:new, :create, :edit, :update, :destroy]
   end
 
 end
