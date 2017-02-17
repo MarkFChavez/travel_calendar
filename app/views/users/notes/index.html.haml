@@ -1,0 +1,32 @@
+.row
+  .col-lg-6.col-lg-offset-3
+    %p.lead.text-center Notes
+
+    - if @notes.any?
+
+      .bottom10
+        .pull-left
+          = link_to "back to calendar", root_path
+        .pull-right
+          = link_to "create a note", new_users_note_path
+        .clearfix
+
+      - @notes.each do |note|
+        = render "notes/note", note: note, edit_url: edit_users_note_path(note), remove_url: users_note_path(note)
+
+    - else
+      .row.text-center
+        .col-lg-12
+          %span
+            You don't have any notes.
+
+            %u
+              = link_to "Create", new_users_note_path
+
+            one or go
+
+            %u
+              = link_to "back", root_path
+
+            to calendar.
+

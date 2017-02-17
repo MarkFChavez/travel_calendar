@@ -4,4 +4,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :rememberable, :trackable, :validatable
 
   has_many :events, dependent: :destroy
+  has_many :notes, as: :resource
 end

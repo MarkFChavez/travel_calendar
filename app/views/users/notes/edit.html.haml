@@ -1,0 +1,11 @@
+.row
+  .col-lg-6.col-lg-offset-3
+    %p.lead.text-center 
+      Edit this note
+
+    = form_for @note, url: users_note_path do |f|
+      = f.cktext_area :content, ckeditor: { enterMode: 2 }
+
+      .top10
+        = f.submit "Update this note", class: "btn btn-primary btn-lg"
+        = link_to "Cancel", users_notes_path, class: "btn btn-default btn-lg"

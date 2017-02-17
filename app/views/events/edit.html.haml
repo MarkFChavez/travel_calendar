@@ -22,22 +22,7 @@
         .clearfix
 
       - @notes.each do |note|
-        .row.bottom10
-          .col-lg-12
-            .well
-              %span
-                %u
-                  = fa_icon("clock-o")
-                  #{note.created_at.strftime("%b %d, %Y %I:%M %P")}
-
-              (
-              = link_to "edit", edit_event_note_path(@event, note)
-              or
-              = link_to "remove", event_note_path(@event, note), method: :delete, class: "text-danger", data: { confirm: "Are you sure you want to remove this note?" }
-              )
-
-              .top10
-                = note.content.html_safe
+        = render "notes/note", note: note, edit_url: edit_event_note_path(@event, note), remove_url: event_note_path(@event, note)
 
     - else
       .row.text-center
