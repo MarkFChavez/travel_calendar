@@ -3,7 +3,7 @@
     .col-lg-12
       = fa_icon("user-circle")
       = current_user.email
-      = link_to "notes", users_notes_path
+      = link_to "notes(#{current_user.notes.count})", users_notes_path
       = link_to "logout", destroy_user_session_path, method: :delete
 
   .calendar-heading
