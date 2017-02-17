@@ -11,11 +11,17 @@
 .row.form-group
   .col-lg-12
     = f.label :start_time
+    %small
+      %i (dd/mm/yyyy)
+
     = f.text_field :start_time, class: "form-control start-time", placeholder: "When will the event start?"
 
 .row.form-group
   .col-lg-12
     = f.label :end_time
+    %small
+      %i (dd/mm/yyyy)
+
     = f.text_field :end_time, class: "form-control end-time", placeholder: "When will the event end?"
 
 .row.form-group
