@@ -25,7 +25,7 @@ production:
   encoding: unicode
   pool: 5
   timeout: 5000
-  database: kalendaryo
-  username: Mark
-  password: <%= ENV['RDS_DATABASE_PASSWORD'] %>
   host: <%= ENV['RDS_HOST_ADDRESS'] %>
+  database: <%= ENV['RDS_DATABASE_NAME'] %>
+  username: <%= ENV['RDS_DATABASE_USERNAME'] %>
+  password: <%= ENV['RDS_DATABASE_PASSWORD'] %>
