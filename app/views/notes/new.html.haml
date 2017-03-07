@@ -3,8 +3,8 @@
     %p.lead.text-center 
       Add a note for your event `#{@event.name}`
 
-    = form_for [@event, @note] do |f|
-      = f.cktext_area :content, value: "", ckeditor: { enterMode: 2 }
+    = form_for [@event, @note], html: { multipart: true } do |f|
+      = render "notes/form", f: f
 
       .top10
         = f.submit "Add this note", class: "btn btn-primary btn-lg"

@@ -1,0 +1,10 @@
+= f.cktext_area :content, ckeditor: { enterMode: 2 }
+
+- if f.object.attachment?
+  .top10
+    %span 
+      This note has an existing attachment named
+      = link_to f.object.attachment_file_name, f.object.attachment.url
+
+.top10
+  = f.file_field :attachment

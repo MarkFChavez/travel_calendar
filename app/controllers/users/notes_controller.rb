@@ -14,7 +14,7 @@ class Users::NotesController < ApplicationController
 
   def update
     @note = current_user.notes.find(params[:id])
-    @note.update!(resource: current_user, content: note_params[:content])
+    @note.update!(note_params)
 
     redirect_to users_notes_url
   end
@@ -36,11 +36,14 @@ class Users::NotesController < ApplicationController
   private
 
   def note_params
-    params.require(:note).permit(:content)
+    params.require(:note).permit(:content, :attachment)
   end
 
   def build_note
-    Note.new(resource: current_user, content: note_params[:content])
+    note = Note.new(note_params)
+    note.resource = current_user
+
+    note
   end
 
 end

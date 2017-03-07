@@ -11,7 +11,8 @@ class NotesController < ApplicationController
   end
 
   def create
-    @note = Note.new(resource: event, content: note_params[:content])
+    @note = Note.new(note_params)
+    @note.resource = event
     @note.save!
 
     redirect_to edit_event_url(event)
@@ -19,10 +20,7 @@ class NotesController < ApplicationController
 
   def update
     @note = event.notes.find(params[:id])
-    @note.update!(
-      resource: event,
-      content: note_params[:content]
-    )
+    @note.update!(note_params)
 
     redirect_to edit_event_url(event)
   end
@@ -36,11 +34,11 @@ class NotesController < ApplicationController
 
   private
 
-  def event
-    Event.find(params[:event_id])
+  def note_params
+    params.require(:note).permit(:content, :attachment)
   end
 
-  def note_params
-    params.require(:note).permit(:content)
+  def event
+    Event.find(params[:event_id])
   end
 end

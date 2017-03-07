@@ -3,8 +3,8 @@
     %p.lead.text-center 
       Edit this note
 
-    = form_for [@event, @note] do |f|
-      = f.cktext_area :content, ckeditor: { enterMode: 2 }
+    = form_for [@event, @note], html: { multipart: true } do |f|
+      = render "notes/form", f: f
 
       .top10
         = f.submit "Update this note", class: "btn btn-primary btn-lg"

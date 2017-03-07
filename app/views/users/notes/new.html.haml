@@ -3,8 +3,8 @@
     %p.lead.text-center 
       Add a note
 
-    = form_for @note, url: users_notes_path do |f|
-      = f.cktext_area :content, value: "", ckeditor: { enterMode: 2 }
+    = form_for @note, url: users_notes_path, html: { multipart: true } do |f|
+      = render "notes/form", f: f
 
       .top10
         = f.submit "Add this note", class: "btn btn-primary btn-lg"

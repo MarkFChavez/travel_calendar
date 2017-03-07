@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170301101146) do
+ActiveRecord::Schema.define(version: 20170307212631) do
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
@@ -34,8 +34,12 @@ ActiveRecord::Schema.define(version: 20170301101146) do
     t.integer  "resource_id"
     t.string   "resource_type"
     t.text     "content"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
     t.index ["resource_id", "resource_type"], name: "index_notes_on_resource_id_and_resource_type"
   end
 

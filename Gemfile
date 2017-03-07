@@ -12,6 +12,9 @@ gem "font-awesome-rails"
 gem "jquery-minicolors-rails"
 gem "devise"
 gem "ckeditor"
+gem "paperclip"
+gem "aws-sdk", "~> 2.3"
+
 gem "unicorn"
 gem "figaro"
 
